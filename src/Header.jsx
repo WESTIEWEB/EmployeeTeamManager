@@ -4,7 +4,7 @@ const Header = ( {selectedTeamCount, selectedTeam }) => {
   console.log(selectedTeamCount)
   return (
     <header>
-      <div className="container">
+      <div className="container mt-4">
         <div className="row justify-content-center">
           <div className="col-8 text-center">
             <h3>Team Members Allocation</h3>

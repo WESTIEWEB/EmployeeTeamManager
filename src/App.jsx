@@ -3,9 +3,12 @@ import './App.css'
 import Header from './Header';
 import Footer from './Footer';
 import Employee from './Employee';
+import { Route, Routes, BrowserRouter as Router} from "react-router-dom";
+import GroupedTeamMembers from "./GroupedTeamMembers";
+import Nav from "./Nav"
 
 export default function App() {
-    const [selectedTeam, setTeam] = React.useState("TeamB")
+    const [selectedTeam, setTeam] = React.useState(JSON.parse(localStorage.getItem("selectedItm")));
   const [employees, setEmployee] = React.useState([{
     id: 1,
     fullName: "Bob Jones",
@@ -103,11 +106,28 @@ export default function App() {
     setEmployee(transformedEmployees);
     
   }
+
+  React.useEffect(()=> {
+    localStorage.setItem("employeeList",JSON.stringify(employees))
+  },[employees])
+  React.useEffect(()=> {
+    localStorage.setItem("selectedItm",JSON.stringify(selectedTeam))
+  },[employees])
+  
   return (
-    <main>
-      <Header selectedTeam={selectedTeam} selectedTeamCount={employees.filter(elem=>(elem.teamName===selectedTeam)).length} />
-      <Employee employees={employees} handleTeamSelection={handleTeamSelection} handleCardClick={handleCardClick} selectedTeam={selectedTeam}/>
-      <Footer />
-    </main>
+   
+      <>
+        <Router>
+        <Nav />
+        <Header selectedTeam={selectedTeam} selectedTeamCount={employees.filter(elem=>(elem.teamName===selectedTeam)).length} />
+        <Routes>
+          <Route path="/" element={<Employee employees={employees} handleTeamSelection={handleTeamSelection} handleCardClick={handleCardClick} selectedTeam={selectedTeam} />} />
+          <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers />} />
+  
+        </Routes>
+        <Footer />
+      </Router>
+      </>
+  
   )
 }
