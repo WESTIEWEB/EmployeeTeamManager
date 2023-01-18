@@ -1,20 +1,15 @@
 import femaleProfile from './images/femaleProfile.jpeg';
 import maleProfile from './images/maleProfile.jpeg';
+import { SelectButton } from "./SelectButton";
 
-const Employee = ({employees,handleTeamSelection, handleCardClick, selectedTeam}) => {
-
-  console.log(employees)
+const Employee = ( {employees,handleTeamSelection, handleCardClick, selectedTeam}) => {
+  // const employees = JSON.parse(localStorage.getItem("employeeList"))
   
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-6">
-          <select className="form-select form-select-lg" value={selectedTeam} onChange={handleTeamSelection}>
-            <option value="TeamA">TeamA</option>
-            <option value="TeamB">TeamB</option>
-            <option value="TeamC">TeamC</option>
-            <option value="TeamD">TeamD</option>
-          </select>
+          <SelectButton handleTeamSelection={handleTeamSelection} selectedTeam={selectedTeam} />
         </div>
       </div>
       <div className="row justify-content-center mt-3 mb-3">

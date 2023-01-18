@@ -3,6 +3,7 @@ import './App.css'
 import Header from './Header';
 import Footer from './Footer';
 import Employee from './Employee';
+import NotFound from "./NotFound";
 import { Route, Routes, BrowserRouter as Router} from "react-router-dom";
 import GroupedTeamMembers from "./GroupedTeamMembers";
 import Nav from "./Nav"
@@ -99,8 +100,9 @@ export default function App() {
     setTeam(e.target.value)
     
   }
-  console.log(selectedTeam)
+  
   function handleCardClick(e) {
+    
     const transformedEmployees = employees.map((empy) => empy.id === parseInt(e.currentTarget.id) ? (empy.teamName === selectedTeam)?{...empy, teamName: ""}:{...empy, teamName: selectedTeam}:{...empy});
 
     setEmployee(transformedEmployees);
@@ -108,11 +110,10 @@ export default function App() {
   }
 
   React.useEffect(()=> {
-    localStorage.setItem("employeeList",JSON.stringify(employees))
-  },[employees])
-  React.useEffect(()=> {
+    localStorage.setItem("employeeList",JSON.stringify(employees));
     localStorage.setItem("selectedItm",JSON.stringify(selectedTeam))
   },[employees])
+ 
   
   return (
    
@@ -122,7 +123,8 @@ export default function App() {
         <Header selectedTeam={selectedTeam} selectedTeamCount={employees.filter(elem=>(elem.teamName===selectedTeam)).length} />
         <Routes>
           <Route path="/" element={<Employee employees={employees} handleTeamSelection={handleTeamSelection} handleCardClick={handleCardClick} selectedTeam={selectedTeam} />} />
-          <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers employees={employees} selectedTeam={selectedTeam} setTeam={setTeam} />} />
   
         </Routes>
         <Footer />

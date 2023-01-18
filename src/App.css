@@ -1,4 +1,5 @@
 body {
+  position: relative;
   font-family: Arial;
   margin: 0;
   padding:0;
@@ -15,8 +16,13 @@ body {
 }
 
 .footer {
-  position: absolute;
+/*   position: relative; */
+  background:#b2b2bd;
+  margin:0;
   bottom: 0;
   right:0;
   left:0;
+}
+.inline-b ul {
+  display:inline-block;
 }
