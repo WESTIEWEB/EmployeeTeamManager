@@ -1,8 +1,7 @@
-import TeamMemberCard from "./TeamMemberCard"
-import femaleProfile from './images/femaleProfile.jpeg';
-import maleProfile from './images/maleProfile.jpeg';
+import femaleProfile from '../../images/femaleProfile.jpeg';
+import maleProfile from '../../images/maleProfile.jpeg';
 
-const TeamMembers = ({employees, handleCardClick, selectedTeam }) => {
+const TeamMemberCard = ({employees, handleCardClick, selectedTeam }) => {
   return (
     <div className="card-collection">
             {
@@ -24,4 +23,4 @@ const TeamMembers = ({employees, handleCardClick, selectedTeam }) => {
   )
 };
 
-export default TeamMembers;
+export default TeamMemberCard;

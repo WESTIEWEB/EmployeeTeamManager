@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css'
-import Header from './Header';
-import Footer from './Footer';
-import Employee from './Employee';
+import Header from './Components/HeaderCard/Header';
+import Footer from './Components/Footer/Footer';
+import Employee from './pages/Employee';
 import NotFound from "./NotFound";
 import { Route, Routes, BrowserRouter as Router} from "react-router-dom";
-import GroupedTeamMembers from "./GroupedTeamMembers";
-import Nav from "./Nav"
+import GroupedTeamMembers from "./pages/GroupedTeamMembers";
+import Nav from "./Components/NavBar/NavBar"
 
 export default function App() {
     const [selectedTeam, setTeam] = React.useState(JSON.parse(localStorage.getItem("selectedItm")));

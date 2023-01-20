@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
+const GroupedTeamCard = ({ employees, selectedTeam, setTeam }) => {
   const [groupedEmployee, setGroupInfo] = useState(groupTeamMembers());
 
   
@@ -68,4 +68,4 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
   )
 }
 
-export default GroupedTeamMembers;
+export default GroupedTeamCard;

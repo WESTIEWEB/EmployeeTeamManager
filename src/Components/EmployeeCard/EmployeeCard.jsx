@@ -1,7 +1,5 @@
-import { TeamDropDown } from "./TeamDropDown";
-import femaleProfile from './images/femaleProfile.jpeg';
-import maleProfile from './images/maleProfile.jpeg';
-import TeamMembers from "./TeamMembers"
+import { TeamDropDown } from "../TeamDropdownCard/TeamDropdownCard";
+import TeamMemberCard from "../TeamMemberCard/TeamMemberCard"
 
 const Employee = ( {employees,handleTeamSelection, handleCardClick, selectedTeam}) => {
   // const employees = JSON.parse(localStorage.getItem("employeeList"))
@@ -15,7 +13,7 @@ const Employee = ( {employees,handleTeamSelection, handleCardClick, selectedTeam
       </div>
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
-          <TeamMembers employees={employees} handleCardClick={handleCardClick} selectedTeam={selectedTeam} />
+          <TeamMemberCard employees={employees} handleCardClick={handleCardClick} selectedTeam={selectedTeam} />
         </div>
       </div>
     </main>
