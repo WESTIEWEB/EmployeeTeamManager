@@ -1,4 +1,4 @@
-export const SelectButton = ({handleTeamSelection,selectedTeam}) => {
+export const TeamDropDown = ({handleTeamSelection,selectedTeam}) => {
   return (
     <select className="form-select form-select-lg" value={selectedTeam} onChange={handleTeamSelection}>
             <option value="TeamA">TeamA</option>
