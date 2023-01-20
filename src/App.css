@@ -26,3 +26,9 @@ body {
 .inline-b ul {
   display:inline-block;
 }
+
+@media only screen and (max-width:600px) {
+  .card-collection {
+    grid-template-columns: 1fr;
+  }
+}
