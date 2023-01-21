@@ -1,17 +1,6 @@
-## Running React on Repl.it
+## HOME PAGE
+Team members can be added to or removed from a group, by selecting a group from the drop down options.
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Team with box shadow indicates that they are member of the team selected from the dropdown.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
-
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
-
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
-
-### Typescript
-
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+To remove or add a team, click on it. Teams with no box shadow are not members of the group chosen from the dropdown options, click to add them to a group.
