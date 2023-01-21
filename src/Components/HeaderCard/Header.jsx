@@ -8,9 +8,9 @@ const Header = ( {selectedTeamCount, selectedTeam }) => {
         <div className="row justify-content-center">
           <div className="col-8 justify-content-center text-center">
             <h3>Team Members Allocation</h3>
-            <h5>
+            {selectedTeam === null? <h5></h5> :<><h5>
               {selectedTeam} has {selectedTeamCount} {selectedTeamCount===1?"member":"members"}
-            </h5>
+            </h5></>}
           </div>
         </div>
       </div>
