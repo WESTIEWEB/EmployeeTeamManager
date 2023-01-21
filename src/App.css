@@ -15,6 +15,11 @@ body {
   text-align:center;
 }
 
+.hoverme:hover{
+  background-color:#b24d44;
+  color:#FFF !important;
+}
+
 .footer {
 /*   position: relative; */
   background:#b2b2bd;
